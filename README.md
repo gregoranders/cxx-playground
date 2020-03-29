@@ -1,13 +1,10 @@
-[C++](https://en.cppreference.com/w/) Playground
+# [C++](https://en.cppreference.com/w/) Playground
 
 [![License][license-image]][license-url]
 [![Issues][issues-image]][issues-url]
+[![Master Build][master-build-image]][master-url] [![Development Build][development-build-image]][development-url] 
 
-[![Master Build][master-build-image]][master-url] [![Master Coverage][master-coveralls-image]][master-coveralls-url]
-
-[![Development Build][development-build-image]][development-url] [![Test Coverage][development-coveralls-image]][development-coveralls-url]
-
-[![Code maintainability][code-maintainability-image]][code-maintainability-url] [![Code issues][code-issues-image]][code-issues-url] [![Code Technical Debt][code-tech-debt-image]][code-tech-debt-url]
+[![Main Language](https://img.shields.io/github/languages/top/gregoranders/cxx-playground)][code-metric-url] [![Languages](https://img.shields.io/github/languages/count/gregoranders/cxx-playground)][code-metric-url] [![Code Size](https://img.shields.io/github/languages/code-size/gregoranders/cxx-playground)][code-metric-url] [![Repo-Size](https://img.shields.io/github/repo-size/gregoranders/cxx-playground)][code-metric-url]
 
 ### Clone repository
 ```
@@ -27,16 +24,7 @@ git clone --recursive https://github.com/gregoranders/cxx-playground
 [master-build-image]: https://github.com/gregoranders/cxx-playground/workflows/Master%20CI/badge.svg
 [development-build-image]: https://github.com/gregoranders/cxx-playground/workflows/Development%20CI/badge.svg
 
-[master-coveralls-url]: https://coveralls.io/github/gregoranders/cxx-playground?branch=master
-[master-coveralls-image]: https://img.shields.io/coveralls/github/gregoranders/cxx-playground/master
-[development-coveralls-image]: https://img.shields.io/coveralls/github/gregoranders/cxx-playground/development
-[development-coveralls-url]: https://coveralls.io/github/gregoranders/cxx-playground?branch=development
-
-[code-maintainability-url]: https://codeclimate.com/github/gregoranders/cxx-playground/maintainability
-[code-maintainability-image]: https://img.shields.io/codeclimate/maintainability/gregoranders/cxx-playground
-
 [code-issues-url]: https://codeclimate.com/github/gregoranders/cxx-playground/maintainability
 [code-issues-image]: https://img.shields.io/codeclimate/issues/gregoranders/cxx-playground
 
-[code-tech-debt-url]: https://codeclimate.com/github/gregoranders/cxx-playground/maintainability
-[code-tech-debt-image]: https://img.shields.io/codeclimate/tech-debt/gregoranders/cxx-playground
+[code-metric-url]: https://github.com/gregoranders/cxx-playground/search?l=C%2B%2B
