@@ -29,8 +29,6 @@ jobs:
         mkdir build
         cd build
         cmake ../
-      env:
-        CI: true
     - name: build
       run: cmake --build build -j 2
 
@@ -57,7 +55,5 @@ jobs:
         mkdir build
         cd build
         cmake ../
-      env:
-        CI: true
     - name: build
       run: cmake --build build -j 2
