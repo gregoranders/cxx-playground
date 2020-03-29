@@ -19,14 +19,13 @@ jobs:
     - name: update ${{ matrix.os }}
       run: |
         sudo apt-get update
-        sudo apt-get install build-essential
-        sudo apt-cache search libcxx
-        sudo apt-cache search clang
+        sudo apt-get install build-essential libclang-9-dev libclang-common-9-dev
         ls /usr/bin/gcc*
+        ls /usr/bin/clang*
     - name: configure on ${{ matrix.os }}
       env:
-        CC: gcc-9
-        CXX: g++-9
+        CC: clang-9
+        CXX: clang++-9
         CI: true
       run: |
         cmake -S . -B build
