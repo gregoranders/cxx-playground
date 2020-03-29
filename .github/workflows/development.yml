@@ -29,6 +29,8 @@ jobs:
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
       run: cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: cd build && ctest
 
   macos:
 
@@ -47,6 +49,8 @@ jobs:
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
       run: cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: cd build && ctest
 
   windows:
 
@@ -65,3 +69,5 @@ jobs:
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
       run: cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: cd build && ctest
