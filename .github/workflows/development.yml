@@ -21,11 +21,12 @@ jobs:
         sudo apt-get update
         sudo apt-get install build-essential
         sudo apt-cache search libcxx
+        sudo apt-cache search clang
         ls /usr/bin/gcc*
     - name: configure on ${{ matrix.os }}
       env:
-        CC: clang-9
-        CXX: clang++-9
+        CC: gcc-9
+        CXX: g++-9
         CI: true
       run: |
         cmake -S . -B build
