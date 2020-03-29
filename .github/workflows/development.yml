@@ -49,3 +49,21 @@ jobs:
         cmake -S . -B build
     - name: build on ${{ matrix.os }}
       run: cmake --build build
+
+  windows:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure on ${{ matrix.os }}
+      env:
+        CI: true
+      run: |
+        cmake -S . -B build
+    - name: build on ${{ matrix.os }}
+      run: cmake --build build
