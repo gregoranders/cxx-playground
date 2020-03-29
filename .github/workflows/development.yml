@@ -6,7 +6,7 @@ on:
       - development
 
 jobs:
-  linux-clang:
+  linux:
 
     runs-on: ${{ matrix.os }}
 
@@ -16,18 +16,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: configure ${{ matrix.os }}
+    - name: update ${{ matrix.os }}
       run: |
         sudo apt-get update
         sudo apt-get install build-essential
-    - name: configure
+    - name: configure on ${{ matrix.os }}
       env:
         CC: clang-9
         CXX: clang++-9
         CI: true
       run: |
-        mkdir build
-        cd build
-        cmake ../
-    - name: build
+        cmake -S . -B build
+    - name: build on ${{ matrix.os }}
       run: cmake --build build
