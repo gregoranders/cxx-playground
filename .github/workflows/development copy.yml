@@ -26,6 +26,6 @@ jobs:
         mkdir build
         cd build
         cmake ../
-        make
+        cmake --build .
       env:
         CI: true
