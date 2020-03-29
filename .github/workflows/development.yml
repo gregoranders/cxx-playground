@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      with:
+        submodules: 'recursive'
     - name: update ${{ matrix.os }}
       run: |
         sudo apt-get update
@@ -42,6 +44,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      with:
+        submodules: 'recursive'
     - name: configure on ${{ matrix.os }}
       env:
         CI: true
@@ -62,6 +66,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      with:
+        submodules: 'recursive'
     - name: configure on ${{ matrix.os }}
       env:
         CI: true
