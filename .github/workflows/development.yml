@@ -21,6 +21,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install build-essential
         sudo apt-cache search libcxx
+        ls /usr/bin/gcc*
     - name: configure on ${{ matrix.os }}
       env:
         CC: clang-9
