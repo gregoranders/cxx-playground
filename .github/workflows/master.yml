@@ -1,9 +1,9 @@
-name: Development CI
+name: Master CI
 
 on:
   push:
     branches:
-      - development
+      - master
 
 jobs:
   linux:
@@ -26,7 +26,7 @@ jobs:
         CXX: g++-9
         CI: true
       run: |
-        cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
     - name: build on ${{ matrix.os }}
       run: cmake --build build
 
@@ -44,7 +44,7 @@ jobs:
       env:
         CI: true
       run: |
-        cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
     - name: build on ${{ matrix.os }}
       run: cmake --build build
 
@@ -62,6 +62,6 @@ jobs:
       env:
         CI: true
       run: |
-        cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
     - name: build on ${{ matrix.os }}
       run: cmake --build build
