@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: configure ${matrix.os}
+    - name: configure ${{ matrix.os }}
       run: |
         sudo apt-get update
         sudo apt-get install build-essential
@@ -42,7 +42,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: configure ${matrix.os}
+    - name: configure ${{ matrix.os }}
       run: |
         sudo apt-get update
         sudo apt-get install build-essential
