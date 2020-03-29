@@ -4,6 +4,8 @@
 [![Issues][issues-image]][issues-url]
 [![Master Build][master-build-image]][master-url] [![Development Build][development-build-image]][development-url] 
 
+[![Main Language](https://img.shields.io/github/languages/top/gregoranders/cxx-playground)][code-metric-url] [![Languages](https://img.shields.io/github/languages/count/gregoranders/cxx-playground)][code-metric-url] [![Code Size](https://img.shields.io/github/languages/code-size/gregoranders/cxx-playground)][code-metric-url] [![Repo-Size](https://img.shields.io/github/repo-size/gregoranders/cxx-playground)][code-metric-url]
+
 ### Clone repository
 ```
 git clone --recursive https://github.com/gregoranders/cxx-playground
@@ -24,3 +26,5 @@ git clone --recursive https://github.com/gregoranders/cxx-playground
 
 [code-issues-url]: https://codeclimate.com/github/gregoranders/cxx-playground/maintainability
 [code-issues-image]: https://img.shields.io/codeclimate/issues/gregoranders/cxx-playground
+
+[code-metric-url]: https://github.com/gregoranders/cxx-playground/search?l=C%2B%2B
