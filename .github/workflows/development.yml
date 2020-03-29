@@ -30,30 +30,4 @@ jobs:
         cd build
         cmake ../
     - name: build
-      run: cmake --build build -j 2
-
-  linux-gcc:
-
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: configure ${{ matrix.os }}
-      run: |
-        sudo apt-get update
-        sudo apt-get install build-essential
-    - name: configure
-      env:
-        CC: gcc-9.2.1
-        CXX: g++-9.2.1
-        CI: true
-      run: |
-        mkdir build
-        cd build
-        cmake ../
-    - name: build
-      run: cmake --build build -j 2
+      run: cmake --build build
