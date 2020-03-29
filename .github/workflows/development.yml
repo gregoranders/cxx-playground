@@ -19,13 +19,31 @@ jobs:
     - name: update ${{ matrix.os }}
       run: |
         sudo apt-get update
-        sudo apt-get install build-essential libclang-9-dev libclang-common-9-dev
-        ls /usr/bin/gcc*
-        ls /usr/bin/clang*
+        sudo apt-get install build-essential
     - name: configure on ${{ matrix.os }}
       env:
-        CC: clang-9
-        CXX: clang++-9
+        CC: gcc-9
+        CXX: g++-9
+        CI: true
+      run: |
+        cmake -S . -B build
+    - name: build on ${{ matrix.os }}
+      run: cmake --build build
+
+  macos:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure on ${{ matrix.os }}
+      env:
+        CC: gcc-9
+        CXX: g++-9
         CI: true
       run: |
         cmake -S . -B build
