@@ -86,3 +86,6 @@ jobs:
     - name: test on ${{ matrix.os }}
       working-directory: build
       run: ctest
+    - name: package on ${{ matrix.os }}
+      working-directory: build
+      run: cpack
