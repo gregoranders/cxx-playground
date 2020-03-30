@@ -81,5 +81,6 @@ jobs:
       run: |
         cmake --build build
     - name: test on ${{ matrix.os }}
+      working-directory: build
       run: |
-        cmake --build build --target test
+        ctest
