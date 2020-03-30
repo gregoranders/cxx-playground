@@ -15,20 +15,24 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
     - name: update ${{ matrix.os }}
       run: |
         sudo apt-get update
-        sudo apt-get install build-essential
+        sudo apt-get install build-essential clang-tools-9 libc++-9-dev libc++1-9 libc++abi-9-dev libc++abi1-9
     - name: configure on ${{ matrix.os }}
       env:
-        CC: gcc-9
-        CXX: g++-9
+        CC: clang-9
+        CXX: clang++-9
         CI: true
       run: |
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
       run: cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: cd build && ctest
 
   macos:
 
@@ -39,7 +43,9 @@ jobs:
         os: [macos-latest]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
     - name: configure on ${{ matrix.os }}
       env:
         CI: true
@@ -47,6 +53,8 @@ jobs:
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
       run: cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: cd build && ctest
 
   windows:
 
@@ -57,7 +65,9 @@ jobs:
         os: [windows-latest]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
     - name: configure on ${{ matrix.os }}
       env:
         CI: true
@@ -65,3 +75,5 @@ jobs:
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
       run: cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: cd build && ctest
