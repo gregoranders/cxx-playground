@@ -32,7 +32,11 @@ jobs:
     - name: build on ${{ matrix.os }}
       run: cmake --build build
     - name: test on ${{ matrix.os }}
-      run: cd build && ctest
+      working-directory: build
+      run: ctest
+    - name: package on ${{ matrix.os }}
+      working-directory: build
+      run: cpack
 
   macos:
 
@@ -54,7 +58,11 @@ jobs:
     - name: build on ${{ matrix.os }}
       run: cmake --build build
     - name: test on ${{ matrix.os }}
-      run: cd build && ctest
+      working-directory: build
+      run: ctest
+    - name: package on ${{ matrix.os }}
+      working-directory: build
+      run: cpack
 
   windows:
 
@@ -76,4 +84,5 @@ jobs:
     - name: build on ${{ matrix.os }}
       run: cmake --build build
     - name: test on ${{ matrix.os }}
-      run: cd build && ctest
+      working-directory: build
+      run: ctest
