@@ -6,9 +6,16 @@
 
 [![Main Language](https://img.shields.io/github/languages/top/gregoranders/cxx-playground)][code-metric-url] [![Languages](https://img.shields.io/github/languages/count/gregoranders/cxx-playground)][code-metric-url] [![Code Size](https://img.shields.io/github/languages/code-size/gregoranders/cxx-playground)][code-metric-url] [![Repo-Size](https://img.shields.io/github/repo-size/gregoranders/cxx-playground)][code-metric-url]
 
+## Development
+
 ### Clone repository
-```
+```SH
 git clone --recursive https://github.com/gregoranders/cxx-playground
+```
+
+### Visual Studio Code
+```SH
+ln -sf build/compile_commands.json .
 ```
 
 [master-url]: https://github.com/gregoranders/cxx-playground/tree/master

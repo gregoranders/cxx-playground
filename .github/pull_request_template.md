@@ -1,10 +1,1 @@
----
-name: Pull request template
-about: Describe this pull request template's purpose here.
-title: ''
-labels: 'enhancement'
-assignees: 'gregoranders'
-
----
-
 
