@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata minClientVersion="100.0.0.1">
+        <id>eu.gregoranders.cxxplayground</id>
+        <version>0.0.1</version>
+        <title>C++ Playground</title>
+        <authors>Gregor Anders</authors>
+        <description>C++ Playground</description>
+    </metadata>
+</package>
