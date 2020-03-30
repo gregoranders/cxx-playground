@@ -28,9 +28,13 @@ jobs:
         CXX: clang++-9
         CI: true
       run: |
-        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
-      run: cmake --build build
+      run: |
+        cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: |
+        cmake --build build --target test
 
   macos:
 
@@ -48,9 +52,13 @@ jobs:
       env:
         CI: true
       run: |
-        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
-      run: cmake --build build
+      run: |
+        cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: |
+        cmake --build build --target test
 
   windows:
 
@@ -68,6 +76,10 @@ jobs:
       env:
         CI: true
       run: |
-        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
-      run: cmake --build build
+      run: |
+        cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: |
+        cmake --build build --target test

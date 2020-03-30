@@ -30,13 +30,11 @@ jobs:
       run: |
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
-      run: cmake --build build
+      run: |
+        cmake --build build
     - name: test on ${{ matrix.os }}
-      working-directory: build
-      run: ctest
-    - name: package on ${{ matrix.os }}
-      working-directory: build
-      run: cpack
+      run: |
+        cmake --build build --target test
 
   macos:
 
@@ -56,13 +54,11 @@ jobs:
       run: |
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
-      run: cmake --build build
+      run: |
+        cmake --build build
     - name: test on ${{ matrix.os }}
-      working-directory: build
-      run: ctest
-    - name: package on ${{ matrix.os }}
-      working-directory: build
-      run: cpack
+      run: |
+        cmake --build build --target test
 
   windows:
 
@@ -82,12 +78,8 @@ jobs:
       run: |
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=ON
     - name: build on ${{ matrix.os }}
-      run: cmake --build build
-    - name: test on ${{ matrix.os }}
-      working-directory: build
-      run: ctest
-    - name: package on ${{ matrix.os }}
-      working-directory: build
       run: |
-        cp ..\.nuspec .
-        cpack
+        cmake --build build
+    - name: test on ${{ matrix.os }}
+      run: |
+        cmake --build build --target test
